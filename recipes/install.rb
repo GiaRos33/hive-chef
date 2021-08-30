@@ -13,6 +13,8 @@ user node['hive2']['user'] do
   home node['hive2']['user-home']
   action :create
   shell "/bin/bash"
+  uid node['hive2']['uid']  # richiama variabile dichirata in default.rb 
+  gid node['hive2']['gid']  # richiama variabile dichirata in default.rb
   manage_home true
   system true
   not_if "getent passwd #{node['hive2']['user']}"
