@@ -13,7 +13,7 @@ user node['hive2']['user'] do
   home node['hive2']['user-home']
   action :create
   shell "/bin/bash"
-  uid['hive2']['user_uid']         # richiama variabile dichirata in default.rb 
+  uid node['hive2']['user_uid']         # richiama variabile dichirata in default.rb 
  
   manage_home true
   system true
