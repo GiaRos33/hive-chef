@@ -5,7 +5,7 @@ my_ip = my_private_ip()
 group node['hops']['group'] do
   gid node['hops']['group_id']
   action :create
-  gid  10100  # richiama variabile dichirata in default.rb
+  gid  "10100"  # richiama variabile dichirata in default.rb
   not_if "getent group #{node['hops']['group']}"
   not_if { node['install']['external_users'].casecmp("true") == 0 }
 end
@@ -14,7 +14,7 @@ user node['hive2']['user'] do
   home node['hive2']['user-home']
   action :create
   shell "/bin/bash"
-  uid 10000 # richiama variabile dichirata in default.rb 
+  uid "10000" # richiama variabile dichirata in default.rb 
  
   manage_home true
   system true
