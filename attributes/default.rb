@@ -5,8 +5,8 @@ include_attribute "kzookeeper"
 
 default['hive2']['user']                    = node['install']['user'].empty? ? "hive" : node['install']['user']
 default['hive2']['user-home']               = "/home/#{node['hive2']['user']}"
-default['airflow']["user_uid"]              = "10000"
-default['airflow']["group_gid"]             = "10100"
+default['hive2']['user_uid']                = "10000"
+default['hive2']['group_gid']               = "10100"
 default['hive2']['version']                 = "3.0.0.7"
 default['hive2']['url']                     = "#{node['download_url']}/apache-hive-#{node['hive2']['version']}-bin.tar.gz"
 default['hive2']['port']                    = "9084"
