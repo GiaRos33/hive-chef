@@ -9,6 +9,7 @@ end
 user node['tez']['user'] do
   home "/home/#{node['tez']['user']}"
   action :create
+  uid node['tez']['uid']  
   shell "/bin/bash"
   manage_home true
   not_if "getent passwd #{node['tez']['user']}"
